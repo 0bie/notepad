@@ -1,0 +1,28 @@
+section.panel.panel--info.mb--md
+  h3.title
+      span.title-text Information
+  form#form_info.form--post(action="/user", method="PUT", role="form")
+    div.form-container
+      div.input-row.mb--xs
+        div.input-field.mb--xs
+          label.input-label(for="fullname") full name
+          input#title.input.input--xs(name="full_name", type="text")
+        div.input-field.mb--xs
+          label.input-label(for="email")
+            span.label-text email
+          input#email.input.input--xs(name="email", type="text")
+      div.input-field.mb--xs
+        label.input-label(for="password")
+          span.label-text password
+        input#password.input.input--xs(name="password", type="text")
+        //- div.input-field
+        //-   label.input-label(for="user_img")
+        //-     span.label-text Profile Image
+        //-   input#image.input.input--xs(name="image", type="text")
+      div.input-field
+        label.input-label(for="title")
+          span.label-text Job Title
+        input#role.input.input--xs.text-field(name="title", placeholder="E.g. Account Manager")
+    div.form-actions
+      button.btn.btn--xs.btn--raised.btn--primary(type="button", title="Update your login information")
+        span.btn-text Save

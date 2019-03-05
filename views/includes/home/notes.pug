@@ -1,0 +1,28 @@
+div#list_container.list-container
+  if (notes.length === 0)
+    section.border.p--sm
+      p.mb--xs There's no published content yet.
+      p
+        if (!user)
+          a(href="/login") Log in 
+          | to publish a note.
+        else
+          a(href="/post")
+            | Create a new note.
+  else
+    ul#note_list.note-list(data-notes)
+      each note, index in notes
+        li.note-item(data-id= note._id)
+          header
+            h3.note-title
+              span.title-text= note.title
+            div.note-timestamp
+              span.note-date(title=`Created ${note.created_date} ago`)= note.created_date
+              span
+                note.created_date
+          if (note.tags.length > 0)
+            footer.note-footer
+              div.footer-content
+                each tag, index in note.tags
+                  span.btn.btn--xs.btn--tag(class=`btn--tag-${tag.label}`)
+                    span.btn-text= tag.label

@@ -1,0 +1,21 @@
+nav
+  ul.navigation
+    if (admin || menu === 'admin' || menu === 'post')
+      li.navigation-item.removed--sm(class=`${menu === 'post' ? 'active': ''}`)
+        a.btn.btn--xs.btn--link(href='/') Home
+      li.navigation-item.removed--sm(class=`${menu === 'admin' ? 'active':''}`)
+        a.btn.btn--xs.btn--link(href='/admin') Dashboard
+      li.navigation-item.navigation-item--logout.removed--sm
+        a.btn.btn--xs.btn--link(href='/logout') Sign out
+    else
+      li.navigation-item(class=`${menu === 'login' ?'active':''}`)
+        a.btn.btn--xs.btn--link(href='/login')
+          span.btn-text Sign In
+    if (user)
+      li.navigation-item.navigation-item--avatar
+        div.avatar.avatar--sm(role="image", data-user= user, aria-label=`Profile avatar for ${user.username}`)
+          span.avatar-text= `${getInitials(user.username)}`
+        span.avatar-label= user.username
+    li.menu
+      div.icon.icon--menu(id="sidebar_toggle")
+        span.bar

@@ -1,0 +1,31 @@
+div.form-content
+  h2.title.mb--xs
+    span.title-text Sign Up
+  if (error)
+    div.notice.notice--error= error
+  form.form--login(action="/register", method="post")
+    div.mb--sm
+          div.input-field
+            label.input-label
+              span.label-text Username
+            input.input.input--xs.input--full(name="username", type="text", placeholder="John Doe")
+    div.input-row
+      div.mb--sm
+        div.input-field
+          label.input-label
+            span.label-text full name
+          input.input.input--xs.input--full(name="full_name", type="text", placeholder="Johnathan Donovan")
+      div.mb--sm
+        div.input-field
+          label.input-label
+            span.label-text email
+              small.label-hint (Optional)
+          input.input.input--xs.input--full(name="email", type="email", placeholder="john.doe@mail.com")
+    div.mb--md
+      div.input-field
+        label.input-label
+          span.label-text Password
+        input.input.input--xs.input--full(name="password", type="password", placeholder="************")
+    div.form-actions
+      button.btn.btn--xs.btn--raised.btn--signin(type="submit", title="Create an account to post notes")
+        span.btn-text Create Account

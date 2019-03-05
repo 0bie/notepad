@@ -1,0 +1,40 @@
+extends layout
+block page
+  - var menu = 'post'
+block content
+
+  section.content-container
+    div.content--post
+      h2.title.tile--page.mb--xs
+        span.title-text Add a New Note
+      section
+        form#form_note.form--post(action="/post", method="post")
+          div.form-container
+            div.input-field
+              label.input-label(for="title")
+                span.label-text Title
+              input#title.input.input--xs.mb--sm(name="title", type="text", placeholder="Sample Post Title", required="true")
+            div.input-row.mb--sm
+              div.input-field
+                label.input-label(for="slug")
+                  span.label-text URL Slug
+                input#slug.input.input--xs(name="slug", type="text", placeholder="sample-post", required="true")
+                span.label-hint This string will be used in the URL.
+              div.input-field
+                label.input-label(for="tag")
+                  span.label-text Tags
+                input#slug.input.input--xs(name="tags", type="text", placeholder="sales, orders, returns, shipping")
+                span.label-hint Comma separated list of tags.
+            div.input-field(style="display: block;")
+              label.input-label(for="text_post")
+                span.label-text.text--sr Text
+              input#text_post(name="text", type="hidden")
+              div#container_editor
+                div#post_editor.editor
+                  p Compose a note...
+          div.form-actions
+            button.btn.btn--xs.btn--raised.btn--primary(type="button", title="Add new article")
+              span.btn-text Save
+  script(type="text/javascript", src="/dist/scripts/vendor.js")
+  script(type="text/javascript", src="/dist/scripts/post.js")
+  link(rel="stylesheet", href="/dist/css/vendorStyle.css")

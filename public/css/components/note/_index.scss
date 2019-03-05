@@ -1,0 +1,227 @@
+.note-item header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: size(sm);
+}
+
+.note-title {
+  font-size: 1rem;
+  flex-grow: 1;
+  font-weight: bold;
+  margin-bottom: size(xxs);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.note-title .title-text {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.note-date {
+  font-size: 0.8125rem;
+}
+
+.note-header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: size(sm);
+}
+
+.note-header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -6px;
+  background-color: #e5e6e9;
+}
+
+.note-tags {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: size(sm);
+}
+
+.note-container .note-actions {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 5%;
+  width: 5%;
+  min-width: 5%;
+  align-self: flex-end;
+}
+
+.note-container .title {
+  flex-grow: 1;
+  flex-basis: 95%;
+  width: 95%;
+  max-width: 95%;
+}
+
+.note-container .btn--tag {
+  margin-bottom: 0;
+}
+
+.note-footer {
+  margin-top: auto;
+}
+
+.note-list .bookmark-message {
+  font-size: 0.875rem;
+}
+
+.note-list .note-title {
+  flex-grow: 1;
+  flex-basis: 90%;
+  width: 90%;
+  max-width: 90%;
+}
+
+.note-list .note-timestamp {
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 10%;
+  width: 10%;
+  max-width: 10%;
+}
+
+.content--home .note-container {
+  flex-grow: 1;
+  flex-basis: 50%;
+  width: 50%;
+  margin-top: 1.25em;
+  padding: size(lg);
+}
+
+.content--home .note-actions .btn {
+  border: 0;
+  padding: 0.125em size(xs);
+}
+
+.content--home .note-actions .btn-text {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.content--home .note-list {
+  height: calc(100% - 1.25em);
+  min-height: calc(100% - 1.25em);
+  max-height: calc(100% - 1.25em);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content--home .note-item {
+  min-height: 6.25em;
+  cursor: pointer;
+  padding: size(sm);
+  margin-bottom: 1.25em;
+  background-color: #fff;
+}
+
+.content--home .note-item:last-of-type {
+  margin-bottom: size(xxxxl);
+}
+
+.content--home .note-body {
+  position: relative;
+  height: calc(100% - 2.5em);
+  min-height: calc(100% - 2.5em);
+  max-height: calc(100% - 2.5em);
+}
+
+.content--home .note-body::after {
+  content: "";
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 118px;
+  padding: 0.625em;
+  pointer-events: none;
+  background: linear-gradient(rgba(255, 255, 255, 0), white);
+}
+
+.content--home .note-content {
+  height: 100%;
+  line-height: 1.75;
+  padding-bottom: 6.25em;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@include breakpoint('min', 800px) {
+  .content--home .note-body {
+    height: calc(100% - 4.0625em);
+    min-height: calc(100% - 4.0625em);
+    max-height: calc(100% - 4.0625em);
+  }
+}
+
+@include breakpoint('max', 799px) {
+  .content--home .note-container {
+    height: calc(100vh - 6.25em);
+    margin-top: size(sm);
+    padding: size(sm);
+  }
+}
+
+@include breakpoint('max', 600px) {
+  .content--home .note-list {
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    display: flex;
+    width: 100%;
+  }
+
+  .content--home .note-item,
+  .content--home .note-item:last-of-type {
+    margin-bottom: 0;
+    min-width: 20em;
+  }
+
+  .content--home .note-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.25em;
+    border-style: solid;
+    border-color: var(--color-border);
+    border-width: 0 0.0625em 0.0625em 0.0625em;
+  }
+
+  .content--home .note-container {
+    overflow: visible;
+    width: auto;
+    margin-top: 0;
+    max-width: none;
+    height: calc(100vh - 12.5em);
+    min-height: calc(100vh - 12.5em);
+    max-height: calc(100vh - 12.5em);
+  }
+
+  .content--home .note-container .title-text {
+    font-size: 1.125rem;
+  }
+}
+
+/**
+ * Interactive states
+ */
+
+.note-actions .icon {
+  transition: fill 250ms;
+}
+
+.note-actions .btn:hover .icon--favorite,
+.btn.is-active[data-favorite] .icon--favorite {
+  fill: #ffd700;
+}

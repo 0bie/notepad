@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= appTitle
+    link(rel="stylesheet", href="/dist/css/style.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body
+    main.main(id="main")
+      block header
+          header.header
+            include includes/logo
+            include includes/menu
+      block page
+      block alert
+        div.alert.alert-warning.hidden
+      .content
+        block content
+        div#notice-block
+  script(type="text/javascript", src="/dist/scripts/runtime.js")

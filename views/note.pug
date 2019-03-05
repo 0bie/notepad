@@ -1,0 +1,12 @@
+block content
+  div.content--note
+    h1= title
+    if (author.length !== 0)
+      h3.note-author= author
+    if (!tags.length === 0)
+      div.note-tags
+        each tag, index in tags
+          span.btn.btn--xs(class=`btn-tag--${tag.label}`)
+            span.btn-text= tag.label
+    div.note-text
+      p= text

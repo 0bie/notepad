@@ -1,0 +1,50 @@
+@import 'panel';
+@import 'profile';
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: size(sm);
+  padding-right: size(sm);
+}
+
+.admin-header .title--page {
+  text-transform: none;
+}
+
+.admin-header .title-text {
+  font-size: 1.25rem;
+  margin-right: size(sm);
+}
+
+.admin-header .icon-container {
+  margin-right: size(xxs);
+}
+
+.admin-header .btn .btn-text {
+  font-size: 0.8125em;
+}
+
+.admin-header .icon--plus {
+  width: 0.8125em;
+  height: 0.8125em;
+}
+
+@include breakpoint('min', 800px) {
+  .admin-header {
+    padding-left: size(md);
+    padding-right: size(lg);
+  }
+}
+
+@include breakpoint('max', 799px) {
+  .admin-header {
+    padding: size(xs) size(sm);
+    box-shadow: 0 0.0625em 0.25em 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .admin-header .title-text {
+    font-size: 1rem;
+  }
+}

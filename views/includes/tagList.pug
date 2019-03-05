@@ -1,0 +1,21 @@
+ul.list.list--tag(id="tag_list")
+  li.tag-item.tag-item--sales
+    a(href="#", data-tag="sales")
+      span.tag-text Sales
+        if (user)
+          span.tag-count= 0
+  li.tag-item.tag-item--orders
+    a(href="#", data-tag="orders")
+      span.tag-text Orders
+        if (user)
+          span.tag-count= 0
+  li.tag-item.tag-item--returns
+    a(href="#", data-tag="returns")
+      span.tag-text Returns
+        if (user)
+          span.tag-count= 0
+  li.tag-item.tag-item--shipping
+    a(href="#", data-tag="shipping")
+      span.tag-text Shipping
+        if (user)
+          span.tag-count= 0

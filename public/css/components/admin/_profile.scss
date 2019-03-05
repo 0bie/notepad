@@ -1,0 +1,112 @@
+.profile-header {
+  margin-bottom: size(sm);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.profile-header .profile-text,
+.profile-header .avatar-label {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-header .profile-text {
+  text-transform: capitalize;
+}
+
+.profile-role .profile-text {
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.profile-header .profile-name {
+  font-size: 1rem;
+  margin-bottom: size(xs);
+  padding-bottom: size(xs);
+  text-transform: capitalize;
+  border-bottom: 1px solid rgba(208, 209, 213, 0.6);
+}
+
+.profile-header .avatar {
+  color: theme(default);
+  margin-right: size(xs);
+  vertical-align: middle;
+  background-color: #fafafa;
+}
+
+.profile-content .title--profile {
+  border-bottom: 1px solid rgba(208, 209, 213, 0.6);
+}
+
+.title--profile .title-text {
+  font-size: 1.125rem;
+}
+
+.list--profile {
+  border: 0;
+  padding: size(xxs) 0 0 0;
+}
+
+.list--profile .profile--meta {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.list--profile .profile-count {
+  position: absolute;
+  right: 4px;
+}
+
+.list--profile .profile-item {
+  padding-bottom: size(xxs);
+}
+
+.profile-item:not(:last-of-type) {
+ border-bottom: 1px solid rgba(208, 209, 213, 0.6);
+}
+
+.profile-item .profile-text,
+.profile-item .profile-count {
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.profile-footer {
+  display: none;
+}
+
+.profile-footer .btn {
+  border: 0;
+  color: theme(default);
+  text-align: center;
+  text-decoration: none;
+  background-color: #fafafa;
+}
+
+@media (min-width: 800px) {
+  .profile-container {
+    margin-bottom: size(xs);
+    height: calc(100% - 4.6875em);
+    min-height: calc(100% - 4.6875em);
+    max-height: calc(100% - 4.6875em);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-footer {
+    display: block;
+  }
+}
+
+/**
+ * Interactive states
+ */
+.profile-footer .btn:hover {
+  background-color: color(theme(default-fg) b(8%));
+}

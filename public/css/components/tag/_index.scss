@@ -1,0 +1,88 @@
+.list--tag .tag-text {
+  font-size: 0.875rem;
+  flex-grow: 1;
+  width: 100%;
+  padding-bottom: (4 / 14 * 1em);
+}
+
+.tag-item:not(:last-of-type) .tag-text {
+  border-bottom: (1 / 14 * 1em) solid #e5e6e9;
+}
+
+.tag-item a {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: size(xxs) size(sm) size(xxs) size(xxl);
+}
+
+.tag-item a::before {
+  content: "";
+  width: 0.75em;
+  height: 0.75em;
+  display: inline-block;
+  border: 0.125em solid currentColor;
+  border-radius: 100%;
+  position: absolute;
+  left: 30px;
+  top: 15px;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+
+.tag-item--orders a::before {
+  color: #943531;
+  }
+
+.tag-item--sales a::before {
+  color: #254e90;
+}
+
+.tag-item--returns a::before {
+  color: rgb(91, 107, 96);
+}
+
+.tag-item--shipping a::before {
+  color: #633e69;
+}
+
+.btn-tag--orders {
+  border: 0;
+  color: #fafafa;
+  background-color: #943531;
+}
+
+.btn-tag--sales {
+  border: 0;
+  color: #fafafa;
+  background-color: #254e90;
+}
+
+.btn-tag--returns {
+  border: 0;
+  color: #fafafa;
+  background-color: rgb(91, 107, 96);
+}
+
+.btn-tag--shipping {
+  border: 0;
+  color: #fafafa;
+  background-color: #633e69;
+}
+
+.tag-item .tag-count {
+  font-size: 0.875rem;
+  position: absolute;
+  right: 20px;
+}
+
+@include breakpoint('max', 799px) {
+  .tag-item a {
+    padding-left: size(xxl);
+  }
+
+  .tag-item a::before {
+    left: 26px;
+  }
+}

@@ -1,0 +1,23 @@
+div.form-content.form-content--active
+  h2.title.mb--xs
+    span.title-text Sign In
+  if (error)
+    div.notice.notice--error= error
+  form.form--login(action="/login", method="post")
+    div.mb--sm
+          div.input-field
+            label.input-label
+              span.label-text Username
+            input.input.input--xs.input--full(name="username", type="text", placeholder="John Doe")
+    div.mb--lg
+      div.input-field
+        label.input-label
+          span.label-text Password
+        input.input.input--xs.input--full(name="password", type="password", placeholder="************")
+    div.form-actions
+      button.btn.btn--xs.btn--raised.btn--signin.mb--lg(type="submit", title="Login to your dashboard")
+        span.btn-text Sign In
+      a.btn.btn--xs.btn--raised.btn--icon.hidden(href="/auth/twitter", title="Login with Twitter")
+        span.btn.btn--link.mr--sm
+          include ../icon/twitter
+        span.btn-text.vert--mid Sign In with Twitter

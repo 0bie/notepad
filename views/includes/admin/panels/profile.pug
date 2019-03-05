@@ -1,0 +1,33 @@
+div.content--profile
+  div.profile-container
+    header.profile-header
+      h3.profile-name
+        div.avatar.avatar--sm(role="image", aria-label=`Profile avatar for ${user.username}`, data-id=`${user._id}`)
+          span.avatar-text= `${getInitials(user.username)}`
+        span.avatar-label= user.username
+      h4
+        span.profile-text= user.full_name
+      if (user.title)
+        h4.profile-role
+          span.profile-text= user.title
+    section.profile-content
+      h3.title.title--profile
+        span.title-text Overview
+      div
+        ul.list.list--profile
+          li.profile-item
+            div.profile-meta
+              span.profile-text users
+              span.profile-count= users.length
+          li.profile-item
+            div.profile-meta
+              span.profile-text notes
+              span.profile-count= notes.length
+          li.profile-item
+            div.profile-meta
+              span.profile-text favorites
+              span.profile-count= user.favorites.length
+  footer.profile-footer
+    div.footer-actions
+      a.btn.btn--xs.btn--full.btn--raised(href="/logout", title="Sign out")
+        span.btn-text Sign Out

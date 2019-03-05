@@ -1,0 +1,140 @@
+.content--home .list-container {
+  position: relative;
+  margin-right: 1.25em;
+  margin-top: 1.25em;
+  flex-grow: 1;
+  flex-basis: calc(25% - 1.25em);
+  width: calc(25% - 1.25em);
+  height: 100%;
+}
+
+.content--home .list-container::after {
+  content: "";
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 118px;
+  padding: 0.625em;
+  pointer-events: none;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+}
+
+.list--posts {
+  border: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.list--posts .list-item {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 15.625em;
+  height: 15.625em;
+  min-width: 15.625em;
+  min-height: 15.625em;
+  padding: size(sm);
+  border: 0.0625em solid;
+  border-color: #e5e6e9;
+  background-color: #ffffff;
+  transition: transform 350ms, opacity 350ms;
+}
+
+.list--posts .list-item:not(:last-of-type) {
+  margin-right: size(sm);
+}
+
+.list--posts .post-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.list--posts .post-actions .btn {
+  flex-grow: 1;
+  margin-bottom: size(xs);
+  text-transform: uppercase;
+}
+
+.list--posts .post-actions .icon {
+  width: 0.8125em;
+  height: 0.8125em;
+}
+
+.list--posts .post-actions .btn-text {
+  font-size: 0.75rem;
+}
+
+.list--posts .post-meta {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list--posts .post-meta .title {
+  font-size: 0.875rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+  padding-right: (24 / 14 * 1em);
+}
+
+.list--posts .post-meta .icon-container {
+  border: 0;
+  position: absolute;
+  right: -10px;
+  top: -8px;
+}
+
+.list--sidebar {
+  border: 0;
+  padding: 0;
+}
+
+.list--tag {
+  border: 0;
+  padding: 0;
+}
+
+@include breakpoint('max', 799px) {
+  .content--home .list-container {
+    margin-right: size(sm);
+    margin-top: size(sm);
+    flex-basis: calc(25% - 1em);
+    width: calc(25% - 1em);
+  }
+}
+
+@include breakpoint(null, 601px, 799px) {
+  .content--home .list-container {
+    height: calc(100vh - 6.25em);
+  }
+}
+
+@include breakpoint('max', 600px) {
+  .content--home .list-container {
+    width: auto;
+    max-width: none;
+    margin-top: 0;
+    margin-right: 0;
+    overflow-x: auto;
+  }
+
+  .content--home .list-container::after {
+    display: none;
+  }
+}
+
+/**
+ * Interactive states
+ */
+
+.list--posts .list-item--deleted {
+  transform: translateY(100%);
+  opacity: 0;
+}

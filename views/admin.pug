@@ -1,0 +1,21 @@
+extends layout
+
+block page
+  - var menu = 'admin'
+
+block content
+  section.content-container.pt--xs
+    header.admin-header
+      h3.title.title--page
+        span.title-text= greet(user.username)
+      a.btn.btn--xs.btn--primary(href="/post", title="Add a new article")
+        span.icon-container
+          include includes/icon/plus
+        span.btn-text.vert--mid New Note
+    div.content--admin
+      include includes/admin/panels/profile
+      div.panel-container
+        div.content--manager(id="admin_content")
+          include includes/admin/panels/post
+          include includes/admin/panels/info
+    script(type="text/javascript", src="/dist/scripts/admin.js")

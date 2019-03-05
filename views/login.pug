@@ -1,0 +1,29 @@
+extends layout
+
+block page
+  - var menu = 'login'
+
+block content
+  div.content--login
+    section.form-section
+      div.form-image
+        img(src="img/login.jpg" alt="sign up image")
+      div.form-fields(id="form_fields")
+        include includes/login/signin
+        include includes/login/signup
+      footer.form-footer(id="form_message")
+        div.footer-content.revealed
+          span.vert--mid Don't have an account?
+          button.btn.btn--link(id="btn_signup", title="Create an account")
+            span.btn-text Sign up
+        div.footer-content.removed
+          span.vert--mid Already a member?
+          a.btn.btn--link(href="/login", title="Login to your dashboard")
+            span.btn-text Login
+  footer
+    .footer-container
+      p.footer-text
+        | Issues? Submit to 
+        a(href="https://github.com/0bie/") GitHub
+        | .
+  script(type="text/javascript", src="/dist/scripts/login.js")

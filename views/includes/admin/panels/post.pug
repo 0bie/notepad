@@ -1,0 +1,23 @@
+section.panel.panel--posts
+  h3.title
+    span.title-text Notes
+      small.count
+        span.count-text(id="note_count") #{notes.length}
+  ul.list.list--posts(id="note_list")
+    if (notes.length === 0)
+        p There's no published content yet.
+    each note, index in notes
+      li.list-item(data-id=`${note._id}`, data-published=`${note.published}`)
+        div.post-meta
+          h3.title= note.title
+          button.btn.btn--xs.btn--hover.icon-container(data-delete)
+            include ../../icon/delete
+        div.post-actions(data-publish)
+          button.btn.btn--xs(type="button", title=`Publish ${note.title}`, class=(note.published) ? 'btn--disabled' : 'btn--primary')
+            span.mr--xxs
+              include ../../icon/upload
+            span.btn-text.vert--mid publish
+          button.btn.btn--xs(type="button", title=`Unpublish ${note.title}`, class=(!note.published) ? 'btn--disabled' : 'btn--primary')
+            span.mr--xxs
+              include ../../icon/remove
+            span.btn-text.vert--mid unpublish
