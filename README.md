@@ -8,7 +8,8 @@ The intent of this project is to gain a better understanding of the tradtional a
 Utilizes [Express.js](https://bit.ly/2MxaULp) and [MongoDB](https://bit.ly/2CL6kov) to implement a server; Render templates ([pug](https://bit.ly/2fSdrBd)), and send resources (NoSQL document stores) based on route endpoints.
 
 ### Demo
-Link to demo: note.obie.dev
+Link to demo: [https://note.obie.dev](https://note.obie.dev)
+
 Credentials: `username: newUser` `password: newPassword`
 
 ### Developing
